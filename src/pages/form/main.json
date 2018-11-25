@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "Form",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "i-card": "../../../static/iview/card/index",
+    "i-input": "../../../static/iview/input/index",
+    "i-panel": "../../../static/iview/panel/index",
+    "i-button": "../../../static/iview/button/index"
+  }
+}
+  
