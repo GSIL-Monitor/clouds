@@ -12,7 +12,8 @@
 	"compileType": "miniprogram",
 	"appid": "wx2a7abf0ac75cfb79",
 	"projectname": "mpvue-koa",
-	"qcloudRoot": "server/",
+	"qcloudRoot": "./server/",
+	"libVersion": "2.3.2",
 	"condition": {
 		"search": {
 			"current": -1,

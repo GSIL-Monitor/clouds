@@ -2,7 +2,7 @@ const conf = {
     test: {
         host     : 'localhost',      
         user     : 'root',             
-        password : '1989810',      
+        password: '1989810',  // 生产: wx2a7abf0ac75cfb79  测试: 1989810    
         port: '3306',                  
         database: 'cAuth'
     },

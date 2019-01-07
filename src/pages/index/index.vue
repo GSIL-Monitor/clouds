@@ -20,6 +20,8 @@
     </form>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
     <a href="/pages/form/main" class="counter">表单操作</a>
+    <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">获取用户信息</button>
+    <open-data type="userNickName"></open-data>
   </div>
 </template>
 
@@ -44,42 +46,18 @@ export default {
       const url = '../logs/main'
       wx.navigateTo({ url })
     },
-    getUserInfo () {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
-            }
-          })
-        }
-      })
-    },
     clickHandle (msg, ev) {
       console.log('clickHandle:', msg, ev)
+    },
+    onGotUserInfo: function (e) {
+      console.log(e.target.userInfo)
     }
   },
 
   created () {
     // 调用应用实例的方法获取全局数据
-    const _this = this
-    console.log(this.getUserInfo())
-    wx.login({
-      success (res) {
-        if (res.code) {
-          // 发起网络请求
-          _this.$httpWX.get({
-            url: '/weapp/select',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
+    wx.login()
+    console.log(wx.getAccountInfoSync())
     // this.$httpWX.get({
     //   url: '/weapp/login',
     //   data: {}
